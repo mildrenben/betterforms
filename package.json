@@ -1,0 +1,15 @@
+{
+  "name": "betterforms",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "homepage": "https://github.com/mildrenben/betterforms",
+  "devDependencies": {
+    "browser-sync": "^2.7.12",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.1"
+  }
+}

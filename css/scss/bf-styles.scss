@@ -1,0 +1,532 @@
+@import './_imports/_variables';
+
+//General
+form {
+	border-radius: 3px;
+	box-shadow: $shadow;
+	background: white;
+	padding: 30px 40px;
+	position: relative;
+	width: $desktop-form-width;
+	@media screen and (max-width: 600px) {
+		width: 100%;
+	}
+	@media screen and (max-width: 500px) {
+		padding: 16px 20px;
+	}
+}
+
+//Labels
+label {
+	color: lighten($black, 5%);
+	transition: all 0.3s $cubic;
+	margin: 30px 0 10px;
+	display: inline-block;
+}
+
+.floating-label {
+	transform: translateY(-18px);
+	position: absolute;
+}
+
+//Inputs
+input {
+	&[type="email"], 
+	&[type="text"], 
+	&[type="password"],
+	&[type="number"] {
+		position: relative;
+		z-index: 2;
+		margin-bottom: 30px;
+		width: $desktop-input-width;
+		display: block;
+		border: none;
+		padding: 10px 0;
+		border-bottom: solid 1px $green;
+		will-change: background-position;
+		transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $green 96%);
+		background-position: -$desktop-input-width 0;
+		background-size: $desktop-input-width 100%;
+		background-repeat: no-repeat;
+		color: $black;
+		font-size: 1em;
+		&.input-active,
+		&:focus {
+			background-position: 0 0;
+			box-shadow: none;
+			outline: none;
+		}
+		&::-webkit-input-placeholder {
+			transition: all 0.2s $cubic;
+		}
+		@media screen and (max-width: 460px) {
+			width: 200px;
+			background-position: -200px 0;
+			background-size: 200px 100%;
+		}
+		@media screen and (max-width: 320px) {
+			width: 160px;
+			background-position: -160px 0;
+			background-size: 160px 100%;
+		}
+	}
+}
+
+.label-active {
+	transform: translateY(-38px);
+	font-size: 0.7em;
+	color: lighten($black, 50%);
+}
+
+.label-required {
+	&:before {
+		content: '*';
+		color: $black;
+		position: absolute;
+		margin-left: -10px;
+	}
+}
+
+//Clear button
+.clear-button {
+	position: absolute;
+	margin-top: -56px;
+	margin-left: calc(100% - 184px);
+	z-index: 2;
+	padding-bottom: 2px;
+	padding-right: 0.5px;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	font-size: 12px;
+	background: $grey;
+	color: white;
+	transform: scale(0);
+	transition: 0.3s ease-out;
+	@media screen and (max-width: 600px) {
+		margin-left: 60%;
+	}
+}
+
+.clear-button-active {
+	transform: scale(1);
+}
+
+//Autosuffix for email
+.bf-autosuffix {
+	margin-left: 20%;
+	margin-top: 10px;
+	box-shadow: $shadow;
+	display: inline-block;
+	border-radius: 3px;
+	position: absolute;
+	z-index: 5;
+	background: white;
+	margin: 0;
+	li {
+		padding: 14px;
+		margin: 0;
+		padding-right: 20px;
+		cursor: pointer;
+		color: $black;
+		&:first-of-type {
+			border-radius: 3px 3px 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 3px 3px;
+		}
+		&:hover {
+			background: lighten($grey, 31%);
+		}
+	}
+}
+
+.bf-selected {
+	background: lighten($grey, 31%);
+	@media screen and (max-width: 620px) {
+		background: none;
+	}
+}
+
+//Checkbox
+input[type="checkbox"] {
+	position: relative;
+	cursor: pointer;
+	&:before {
+		content: '';
+		width: 16px;
+		height: 16px;
+		border: solid 2px $green;
+		border-radius: $border-radius-small;
+		background: white;
+		position: absolute;
+	}
+	&:after {
+		content: '✓';
+		color: white;
+		background: $green;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: solid 2px $green;
+		border-radius: $border-radius-small;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s $cubic;
+		will-change: opacity;
+	}
+	&:checked {
+		&:after {
+			opacity: 1;
+		}
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+//Radio buttons
+input[type="radio"] {
+	position: relative;
+	top: 2px;
+	left: 2px;
+	margin: 0 8px;
+	cursor: pointer;
+	&:before {
+		content: '';
+		background-color: white;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		border: solid 2px $green;
+		display: inline-block;
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		background-image: radial-gradient(circle, $green 40%, white 50%);
+		background-size: 0;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		transition: all 0.3s $cubic;
+		will-change: background-size;
+		z-index: 2;
+	}
+	&:after {
+		content: '';
+		width: 16px;
+		height: 16px;
+		background: white;
+		border-radius: 50%;
+		position: absolute;
+		transition: all 0.3s $cubic;
+	}
+	&:checked {
+		&:before {
+			background-size: 14px 14px;
+		}
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+.bf-radio-text {
+	margin-top: 30px;
+	display: inline-block;
+}
+
+.bf-radio-wrap {
+	margin: 11px 0;
+	label {
+		width: 30%;
+		margin: 0 0 10px;
+	}
+}
+
+//Select
+select {
+	border: none;
+	border-bottom: solid 1px $grey;
+	color: $black;
+	padding: 6px 0;
+	cursor: pointer;
+	display: block;
+}
+
+//Range
+input[type=range] {
+	display: block;
+	-webkit-appearance: none;
+	&:focus {
+		outline: none;
+	}
+	&::-webkit-slider-runnable-track {
+		height: 3px;
+		cursor: pointer;
+		background: $grey;
+	}
+	&::-webkit-slider-thumb {
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background: $green;
+		cursor: pointer;
+		-webkit-appearance: none;
+		margin-top: -6px;
+	}
+	&::-moz-range-track {
+		height: 3px;
+		cursor: pointer;
+		background: $grey;
+	}
+	&::-moz-range-thumb {
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		border: none;
+		background: $green;
+		cursor: pointer;
+	}
+	&::-ms-track {
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	&::-ms-fill-lower {
+		background: $green;
+	}
+	&::-ms-fill-upper {
+		background: $grey;
+	}
+	&::-ms-thumb {
+		background: $green;
+	}
+}
+
+textarea {
+	width: 100%;
+	width: calc(100% - 4px);
+	min-height: 80px;
+	display: block;
+	border: solid 1px $grey;
+	transition: border 0.3s $cubic;
+	&:focus {
+		border: solid 1px $green;
+		outline: none;
+	}
+}
+
+//Password view
+.bf-password-view {
+	border-radius: 3px;
+	padding: 0 4px;
+	font-size: 10px;
+	position: relative;
+	top: -60px;
+	text-align: center;
+	position: relative;
+	float: right;
+	background: $grey;
+	color: white;
+	cursor: pointer;
+}
+
+//Info tooltip
+.bf-info-tooltip {
+	border-radius: 500px;
+	height: 20px;
+	width: 20px;
+	position: relative;
+	top: -60px;
+	display: inline-flex;
+	item-align: center;
+	justify-content: center;
+	position: relative;
+	float: right;
+	background: $grey;
+	color: white;
+	cursor: pointer;
+	&:after,
+	&:before {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		content: attr(data-tooltip);
+		font-size: 12px;
+		padding: 4px 8px;
+		top: 2.2em;
+		left: 50%;
+		transform: translateX(-50%) translateY(-2px);
+		background: $grey;
+		color: white;
+		white-space: nowrap;
+		z-index: 2;
+		border-radius: 3px;
+		transition: opacity 0.2s $cubic, transform 0.2s $cubic;
+	}
+	&:before {
+		content: '';
+		background: none;
+	}
+	&:hover {
+		&:after,
+		&:before {
+		  display: block;
+		  opacity: 1;
+		  visibility: visible;
+		  transform: translateX(-50%) translateY(0);
+		}
+	}
+	&.bf-arrow {
+		&:before {
+			content: '';
+			top: 1.8em;
+			height: 0;
+			width: 0;
+			background: none;
+			padding: 0;
+			border-bottom: solid 7px $grey;
+			border-left: solid 7px transparent;
+			border-right: solid 7px transparent;
+		}
+	}
+	&.info-tooltip-active {
+		&:after {
+		  display: block;
+		  opacity: 1;
+		  visibility: visible;
+		  transform: translateX(-50%) translateY(0);
+		}
+	}
+	&.bf-tooltip-left {
+		&:after {
+			top: 0;
+			right: 2.2em;
+			left: auto;
+			transform: translateX(2px) translateY(-4px);
+		}
+		&:hover {
+			&:after {
+				transform: translateX(0) translateY(-4px);
+			}
+		}
+		&.bf-arrow {
+			&:before {
+				top: 0;
+				border-bottom: solid 7px transparent;
+				border-left: solid 7px $grey;
+				border-top: solid 7px transparent;
+				transform: translateX(2px) translateY(3px);
+				right: 1.3em;
+				left: auto;
+			}
+			&:hover {
+				&:before {
+					transform: translateX(0px) translateY(3px);
+				}
+			}
+		}
+	}
+	&.bf-tooltip-right {
+		&:after {
+			top: 0;
+			left: 2.2em;
+			right: auto;
+			transform: translateX(-2px) translateY(-4px);
+		}
+		&:hover {
+			&:after {
+				transform: translateX(0) translateY(-4px);
+			}
+		}
+		&.bf-arrow {
+			&:before {
+				top: 0;
+				border-bottom: solid 7px transparent;
+				border-right: solid 7px $grey;
+				border-top: solid 7px transparent;
+				transform: translateX(2px) translateY(3px);
+				left: 0.9em;
+				right: auto;
+			}
+			&:hover {
+				&:before {
+					transform: translateX(4px) translateY(3px);
+				}
+			}
+		}
+	}
+	&.bf-tooltip-top {
+		&:after {
+			top: -2.6em;
+			transform: translateX(-50%) translateY(0);
+		}
+		&:hover {
+			&:after {
+				transform: translateX(-50%) translateY(-2px);
+			}
+		}
+		&.bf-arrow {
+			&:before {
+				top: -0.8em;
+				border-top: solid 7px $grey;
+				border-left: solid 7px transparent;
+				border-right: solid 7px transparent;
+				border-bottom: none;
+				transform: translateX(-7px) translateY(3px);
+			}
+			&:hover {
+				&:before {
+					transform: translateX(-7px) translateY(1px);
+				}
+			}
+		}
+	}
+}
+
+//Buttons
+.bf-button {
+	margin-top: 30px;
+	padding: 8px 14px;
+	background: $green;
+	border-radius: 3px;
+	color: white;
+	font-weight: 500;
+	transition: all 0.3s $cubic;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+	&:hover {
+		box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+		background: lighten($green, 5%);
+	}
+}
+
+.bf-blue {
+	background: $blue;
+	&:hover {
+		background: lighten($blue, 5%);
+	}
+}
+
+.bf-red {
+	background: $red;
+	&:hover {
+		background: lighten($red, 5%);
+	}
+}
+
+.bf-orange {
+	background: $orange;
+	&:hover {
+		background: lighten($orange, 5%);
+	}
+}
