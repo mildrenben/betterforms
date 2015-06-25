@@ -14,6 +14,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
+	<div class="alert-wrap ph-alert card no-pad">
+	  <input type="checkbox" id="alert-check">
+	  <label for="alert-check">CLOSE</label>
+	  <div class="alert">
+	    <p>Hey ProductHunters!</p>
+	    <p>Use the code PH25OFF to get 25% off!</p>
+	    <p>There are only 150 coupons, so get them fast!</p>
+	  </div>
+	</div>
 	<input type="checkbox" id="nav--super-vertical-responsive">
 	<label for="nav--super-vertical-responsive">MENU</label>
 	<aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical">
@@ -43,17 +52,25 @@
 		<header class="container--baseline">
 			<h1 class="m--1 g--4 g-s--12">Home</h1>
 		</header>
-		<h4 class="m--1">A plugin for making your forms better</h4>
-		<div class="g--10 m--1 container--start container--wrap--m">
+		<div class="tile fade-in-from-left">
+			<h2 class="m--1 super-header">Betterforms is a plugin for making your forms <span>suck less</span></h2>
+		</div>
+		<div class="card g--5 m--1 g-m--8 g-s--10 fade-in-from-top anim-delay--5">
+			<h3 class="main-header">Your form abandonment rates are 73%</h3>
+			<span>SOURCE: Formisimo 2013, average online form abandonment rates</span>
+			<h4 class="second-header">Let's bring that number down &#8595;</h4>
+		</div>
+		
+		<div class="g--10 m--1 container--start container--wrap--m ">
 			<div class="g--4 g-s--12">
-				<a href="https://github.com/mildrenben/betterforms" class="download-button">Download on Github</a>
-				<div class="tile">
-					<h5>Reduce dropout rate</h5>
-					<h5>Improve user experience</h5>
-					<h5>Increase sign up rate</h5>
-					<h5>Save development time</h5>
-				</div>
-				<form>
+				<a href="https://github.com/mildrenben/betterforms" class="btn--raised btn--river fade-in-from-top anim-delay--10">Download on Github</a>
+<!-- 				<div class="tile">
+	<h5>Reduce dropout rate</h5>
+	<h5>Improve user experience</h5>
+	<h5>Increase sign up rate</h5>
+	<h5>Save development time</h5>
+</div> -->
+				<form class="fade-in-from-bottom anim-delay--15">
 					<h5>Demo form</h5>
 					<label>Username</label>
 					<input type="text" />
@@ -105,7 +122,7 @@
 					<button class="bf-button">SUBMIT</button>
 				</form>
 			</div>
-			<div class="g--4 m--2 g-m--12 m-m--0 tile features">
+			<div class="g--4 m--2 g-m--12 m-m--0 card features fade-in-from-bottom anim-delay--15">
 				<h5>Features</h5>
 				<ul>
 					<li>Email suggestions</li>
