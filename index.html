@@ -5,6 +5,7 @@
 	<link rel="icon" href="favicon.png" type="image/png">
 	<link type="text/css" rel="stylesheet" href="./css/demo_styles.css">
 	<link type="text/css" rel="stylesheet" href="./css/bf-styles.css">
+	<link type="text/css" rel="stylesheet" href="./css/index-styles.css">
 	<link href="./css/monokai_sublime.css" rel="stylesheet">
 	<link rel="icon" href="/img/favicon.png" type="image/png">
 	<script src="./js/highlight.pack.js"></script>
@@ -14,133 +15,130 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-	<div class="alert-wrap ph-alert card no-pad">
-	  <input type="checkbox" id="alert-check">
-	  <label for="alert-check">CLOSE</label>
-	  <div class="alert">
-	    <p>Hey ProductHunters!</p>
-	    <p>Use the code PH25OFF to get 25% off!</p>
-	    <p>There are only 150 coupons, so get them fast!</p>
-	  </div>
-	</div>
-	<input type="checkbox" id="nav--super-vertical-responsive">
-	<label for="nav--super-vertical-responsive">MENU</label>
-	<aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical">
-		<div class="g--12 logo-area no-margin-vertical">
-			<h4 class="color--pink no-margin-vertical">Betterforms</h4>
+	<nav class="index-nav">
+		<ul>
+			<li><a href="getting-started.html">Get Started</a></li>
+			<li><a href="index_old.html">Documentation</a></li>
+			<li><a href="license.html">License</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="hero">
+			<div class="header-text">
+				<h1>Betterforms</h1>
+				<h2>A plugin for making forms better</h2>
+			</div>
 		</div>
-		<nav class="g--12 no-margin-vertical">
-			<a href="/index.html">Home</a>
-			<a href="/getting-started.html">Getting Started</a>
-	        <div class="nav-collapsible">
-		      <input type="checkbox" id="nav-collapsible-1">
-		      <label for="nav-collapsible-1">Components</label>
-		      <div class="nav-collapsible-links">
-		        <a href="./docs/buttons.html">Buttons</a>
-		        <a href="./docs/clear-button.html">Clear Button</a>
-		        <a href="./docs/email-suggestion.html">Email Suggestion</a>
-		        <a href="./docs/input-animation.html">Input Animation</a>
-		        <a href="./docs/password-view.html">Password View</a>
-		        <a href="./docs/required.html">Required</a>
-		        <a href="./docs/tooltips.html">Tooltips</a>
-		      </div>
-		    </div>
-			<a href="/license.html">License</a>
-		</nav>
-	</aside>
-	<main class="g--10 g-m--12 m--2 m-m--0 no-margin-vertical">
-		<header class="container--baseline">
-			<h1 class="m--1 g--4 g-s--12">Home</h1>
-		</header>
-		<div class="tile fade-in-from-left">
-			<h2 class="m--1 super-header">Betterforms is a plugin for making your forms <span>suck less</span></h2>
+
+		<div class="features">
+			<h3>Features</h3>
+			<ul>
+				<li>&#10003; Email suggestions</li>
+				<li>&#10003; Input &amp; label focus animations</li>
+				<li>&#10003; Clear button</li>
+				<li>&#10003; Show password button</li>
+				<li>&#10003; Information tooltips</li>
+				<li>&#10003; Automatic required mark</li>
+				<li>&#10003; Checkbox animations</li>
+				<li>&#10003; Radio button animations</li>
+				<li>&#10003; Textarea styling</li>
+				<li>&#10003; Select styling</li>
+			</ul>
+			
+			<div class="card g--4 g-m--6 g-s--12 m--4 m-m--3 m-s--0">
+				<p>Hey ProductHunters!</p>
+	    		<p>Use the code PH25OFF to get 25% off!</p>
+	    		<p>There are only 150 coupons, so get them fast!</p>
+	    	</div>
+
+			<div class="g--12 container--start container--wrap--s license-wrap">
+				<a href="https://app.simplegoods.co/i/GASPWFRQ" class="license card">
+					<span class="tag">License</span>
+					<span class="first">Developer</span>
+					<span class="second">License for 1 developer</span>
+					<span class="last">$9</span>
+				</a>
+				<a href="https://app.simplegoods.co/i/MYPLRYBQ" class="license card">
+					<span class="tag">License</span>
+					<span class="first">Team</span>
+					<span class="second">License for 8 developers</span>
+					<span class="last">$49</span>
+				</a>
+				<a href="https://app.simplegoods.co/i/BOVOXFCC" class="license card">
+					<span class="tag">License</span>
+					<span class="first">Organization</span>
+					<span class="second">License for unlimited developers</span>
+					<span class="last">$139</span>
+				</a>	
+			</div>
+			<a href="https://github.com/mildrenben/betterforms" class="btn--raised btn--river">Download on Github &raquo;</a>
 		</div>
-		<div class="card g--5 m--1 g-m--8 g-s--10 fade-in-from-top anim-delay--5">
-			<h3 class="main-header">Your form abandonment rates are 73%</h3>
-			<span>SOURCE: Formisimo 2013, average online form abandonment rates</span>
-			<h4 class="second-header">Let's bring that number down &#8595;</h4>
+
+		<div class="stat">
+			<div class="stat-text">
+				<h2>Form abandonment rates are 73%</h2>
+				<p>SOURCE: Formisimo 2013, average online form abandonment rates</p>
+				<h4>Let's bring that number down &#8595;</h4>
+			</div>
 		</div>
 		
-		<div class="g--10 m--1 container--start container--wrap--m ">
-			<div class="g--4 g-s--12">
-				<a href="https://github.com/mildrenben/betterforms" class="btn--raised btn--river fade-in-from-top anim-delay--10">Download on Github</a>
-<!-- 				<div class="tile">
-	<h5>Reduce dropout rate</h5>
-	<h5>Improve user experience</h5>
-	<h5>Increase sign up rate</h5>
-	<h5>Save development time</h5>
-</div> -->
-				<form class="fade-in-from-bottom anim-delay--15">
-					<h5>Demo form</h5>
-					<label>Username</label>
-					<input type="text" />
-					<p class="bf-info-tooltip bf-arrow" data-tooltip="6 letters minimum">?</p>
+		<div class="demo-form">
+			<h3>Demo Form</h3>
+			<form class="fade-in-from-bottom anim-delay--15">
+				<label>Username</label>
+				<input type="text" />
+				<p class="bf-info-tooltip bf-arrow" data-tooltip="6 letters minimum">?</p>
 
-					<label>Password</label>
-					<input type="password" />
-					<p class="bf-password-view">SHOW</p>
+				<label>Password</label>
+				<input type="password" />
+				<p class="bf-password-view">SHOW</p>
 
-					<label>A required input</label>
-					<input type="text" required/>
+				<label>A required input</label>
+				<input type="text" required/>
 
-					<label>Email</label>
-					<input type="email" />
+				<label>Email</label>
+				<input type="email" />
 
-					<label>Confirm Email</label>
-					<input type="email" />
+				<label>Confirm Email</label>
+				<input type="email" />
 
-					<label>Are you attending?</label>
-					<input type="checkbox" />
-					
-					<label>Who is your favourite Pokemon?</label>
-					<div class="bf-radio-wrap">
-						<label>Bulbasaur</label>
-						<input type="radio" name="radio1">
-					</div>
-					<div class="bf-radio-wrap">
-						<label>Squirtle</label>
-						<input type="radio" name="radio1">
-					</div>
-					<div class="bf-radio-wrap">
-						<label>Charmander</label>
-						<input type="radio" name="radio1">
-					</div>
-					
-					<label>Comments</label>
-					<textarea></textarea>
-					
-					<label>What is your nationality?</label>
-					<select>
-						<option>British</option>
-						<option>American</option>
-						<option>Canadian</option>
-					</select>
+				<label>Are you attending?</label>
+				<input type="checkbox" />
+				
+				<label class="bf-radio-label">Who is your favourite Pokemon?</label>
+				<div class="bf-radio-wrap">
+					<label>Bulbasaur</label>
+					<input type="radio" name="radio1">
+				</div>
+				<div class="bf-radio-wrap">
+					<label>Squirtle</label>
+					<input type="radio" name="radio1">
+				</div>
+				<div class="bf-radio-wrap">
+					<label>Charmander</label>
+					<input type="radio" name="radio1">
+				</div>
+				
+				<label>Comments</label>
+				<textarea></textarea>
+				
+				<label>What is your nationality?</label>
+				<select>
+					<option>British</option>
+					<option>American</option>
+					<option>Canadian</option>
+				</select>
 
-					<label for="range1">Pick a number</label>
-					<input type="range" id="range1" min="1" max="100" step="1" value="1"/>
+				<label for="range1">Pick a number</label>
+				<input type="range" id="range1" min="1" max="100" step="1" value="1"/>
 
-					<button class="bf-button">SUBMIT</button>
-				</form>
-			</div>
-			<div class="g--4 m--2 g-m--12 m-m--0 card features fade-in-from-bottom anim-delay--15">
-				<h5>Features</h5>
-				<ul>
-					<li>Email suggestions</li>
-					<li>Autofill second email input</li>
-					<li>Input &amp; label focus animations</li>
-					<li>Clear button</li>
-					<li>Show password button</li>
-					<li>Information tooltips</li>
-					<li>Automatic required mark</li>
-					<li>Checkbox animations</li>
-					<li>Radio button animations</li>
-					<li>Textarea styling</li>
-					<li>Select styling</li>
-				</ul>
-			</div>
+				<button class="bf-button">SUBMIT</button>
+			</form>
 		</div>
-		<div class="g--10 m--1">
-			<h5>Licensing</h5>
+
+		<div class="licensing">
+			<h3>Licensing</h3>
 			<h6>Commercial License</h6>
 			<p>If you want to use Betterforms in commercial websites, themes, projects or apps, you need to purchase a Commercial license.</p>
 			<p>Once you have purchased a Commercial license, you'll recieve a PDF of the license and you'll be free to use Betterforms in your commercial developments.</p>
@@ -149,24 +147,25 @@
 					<span class="tag">License</span>
 					<span class="first">Developer</span>
 					<span class="second">License for 1 developer</span>
-					<span class="last">$25</span>
+					<span class="last">$9</span>
 				</a>
 				<a href="https://app.simplegoods.co/i/MYPLRYBQ" class="license card">
 					<span class="tag">License</span>
 					<span class="first">Team</span>
 					<span class="second">License for 8 developers</span>
-					<span class="last">$130</span>
+					<span class="last">$49</span>
 				</a>
 				<a href="https://app.simplegoods.co/i/BOVOXFCC" class="license card">
 					<span class="tag">License</span>
 					<span class="first">Organization</span>
 					<span class="second">License for unlimited developers</span>
-					<span class="last">$330</span>
-				</a>
+					<span class="last">$139</span>
+				</a>	
 			</div>
+			<a href="https://github.com/mildrenben/betterforms" class="btn--raised btn--river">Download on Github &raquo;</a>
 		</div>
-		<div class="g--10 m--1">
-			<h5>Browser Support</h5>
+		<div class="browser-support">
+			<h3>Browser Support</h3>
 			<p>IE 10+, Safari 6+ and all modern browsers including mobile browsers.</p>
 		</div>
 	</main>
