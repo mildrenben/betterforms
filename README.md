@@ -15,17 +15,22 @@ For demo, docs and licensing visit http://mildrenben.github.io/betterforms/
 
 ## Features
 
-Email suggestions
-Autofill second email input
-Input & label focus animations
-Clear button
-Show password button
-Information tooltips
-Automatic required mark
-Checkbox animations
-Radio button animations
-Textarea styling
-Select styling
+- Email suggestions
+- Autofill second email input
+- Input & label focus animations
+- Clear button
+- Show password button
+- Information tooltips
+- Automatic required mark
+- Checkbox animations
+- Radio button animations
+- Textarea styling
+- Select styling
+
+## Main Files
+
+- /prod/css/bf-styles.css
+- /prod/js/bf-script.js
 
 ## License
 
