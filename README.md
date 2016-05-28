@@ -11,7 +11,7 @@ Save development time
 
 ## Demo
 
-For demo, docs and licensing visit http://benmildren.com/projects/betterforms/index.html
+For demo, docs and licensing visit http://mildrenben.github.io/betterforms/
 
 ## Features
 
@@ -31,4 +31,4 @@ Select styling
 
 Betterforms has three kinds of licenses: open-source, commercial, and OEM.
 
-For full license details visit http://benmildren.com/projects/betterforms/index.html
+For full license details visit http://mildrenben.github.io/betterforms/
