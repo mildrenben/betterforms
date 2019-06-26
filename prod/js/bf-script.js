@@ -1,16 +1,15 @@
-var inputs = document.querySelectorAll('input[type="text"], input[type="password"], input[type="email"], input[type="number"]');
-	  infoTooltip = document.querySelectorAll('.info-tooltip'),
+"use strict"
+
+var inputs = document.querySelectorAll('input[type="text"], input[type="password"], input[type="email"], input[type="number"]'),
 	  body = document.querySelector('body');
 
 //Inputs underline anim
 if(inputs) {
   var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-  console.log(isFirefox);
   for(var i = 0; i < inputs.length; i++) {
     inputs[i].previousElementSibling.classList.add('floating-label');
     inputs[i].addEventListener('focusin', function(){
       this.previousElementSibling.classList.add('label-active');
-      console.log(this);
     })
     inputs[i].addEventListener('focusout', function(){
       if(!(this.value == '')) {
@@ -27,7 +26,6 @@ if(inputs) {
     if(isFirefox) {
       inputs[i].addEventListener('focus', function(){
         this.previousElementSibling.classList.add('label-active');
-        console.log(this);
       })
       inputs[i].addEventListener('blur', function(){
         if(!(this.value == '')) {
@@ -98,15 +96,6 @@ if(inputs) {
 }
 
 
-//Info tooltip
-if(infoTooltip) {
-  for(var j = 0; j < infoTooltip.length; j++) {
-    infoTooltip[j].addEventListener('click', function(){
-      this.classList.toggle('info-tooltip-active');
-    })
-  }
-}
-
 //Email autosuffix
 var email = document.querySelectorAll('input[type="email"]'),
     //auto = document.querySelector('.bf-autosuffix'),
@@ -114,7 +103,7 @@ var email = document.querySelectorAll('input[type="email"]'),
     popularEmails = ['gmail.com', 'googlemail.com', 'hotmail.com', 'yahoo.com', 'msn.com', 'aol.com'],
 
     itemSelected = [],
-    
+
     itemList = [];
 
 if(email) {
@@ -156,7 +145,7 @@ if(email) {
             itemSelected[s] -= 1;
           }
         }
-        
+
         if(window.event.keyCode === 13 || event.keyCode === 13) { // Enter
           if(email[s] === document.activeElement) {
             email[s].value = itemList[itemSelected[s]].textContent;
@@ -183,7 +172,7 @@ if(email) {
             itemSelected[s] -= 1;
           }
         }
-        
+
         if(event.keyCode === 13) { // Enter
           if(email[s] === document.activeElement) {
             email[s].value = itemList[itemSelected[s]].textContent;
@@ -191,7 +180,7 @@ if(email) {
           autoArray[s].innerHTML = '';
         }
       }
-      
+
       for(var i = 0; i < itemList.length; i++) { // For loop through all items and add selected class if needed
         if(itemList[i].style.background = '#ededed') {
           itemList[i].style.background = '';
@@ -207,17 +196,16 @@ if(email) {
 if(email) {
   for(var r = 0; r < email.length; r++) {
     email[r].addEventListener('keyup', function(event) {
-      console.log(itemList, itemSelected);
       this.nextElementSibling.nextElementSibling.innerHTML = '';
-      
+
       if(this.value.match('@')) { // If the input has a @ in it
         var afterAt = this.value.substring(this.value.indexOf('@') + 1, this.value.length);
         var popularEmailsSub = [];
-        
+
         for(var l = 0; l < popularEmails.length; l++) {
           popularEmailsSub.push(popularEmails[l].substring(0, afterAt.length))
         }
-        
+
         if(afterAt == '') {
           for(var i = 0; i < popularEmails.length; i++) {
             this.nextElementSibling.nextElementSibling.innerHTML += '<li>' + this.value + popularEmails[i] + '</li>';
@@ -225,23 +213,23 @@ if(email) {
           itemList = document.querySelectorAll('.bf-autosuffix li');
           itemList[0].style.background = '#ededed';
         }
-        
+
         else if(!(afterAt == '')) {
           var matchedEmails = [];
-          
+
           for(var k = 0; k < popularEmails.length; k++) {
             if(popularEmailsSub[k].match(afterAt)) {
-              matchedEmails.push(popularEmails[k]);                   
+              matchedEmails.push(popularEmails[k]);
             }
           }
-          
+
           for(var i = 0; i < matchedEmails.length; i++) {
             this.nextElementSibling.nextElementSibling.innerHTML += '<li>' + this.value.substring(0, this.value.indexOf('@')) + '@' + matchedEmails[i] + '</li>';
           }
         }
-        
+
         var itemsList = document.querySelectorAll('.bf-autosuffix li');
-        
+
         for(var j = 0; j < itemsList.length; j++) {
           itemsList[j].addEventListener('click', function() {
             this.parentNode.previousElementSibling.previousElementSibling.value = this.textContent;
@@ -251,7 +239,7 @@ if(email) {
       }
     });
   }
-  
+
 }
 
 
@@ -276,9 +264,8 @@ if(passEye) {
 
 //Range
 var range = document.querySelectorAll('input[type="range"]');
-console.log(range);
 
-if(range) { 
+if(range) {
   for(var p = 0; p < range.length; p++) {
     var rangeVal = document.createElement('p');
     rangeVal.innerHTML = range[p].value;

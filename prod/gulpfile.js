@@ -25,7 +25,7 @@ gulp.task('compile-scss', function(){
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions']
 	}))
-	.pipe(minifyCss())
+	//.pipe(minifyCss())
 	.pipe(gulp.dest('./css'))
 	.pipe(reload({
 		stream: true
